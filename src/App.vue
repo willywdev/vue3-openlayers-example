@@ -1,16 +1,11 @@
 <script setup>
 import HelloWorld from "./components/HelloWorld.vue";
 import { ref } from "vue";
-import UserInput from "./components/UserInput.vue";
 
 const coords = ref([7.812653, 51.682774]);
 const projection = ref("EPSG:4326");
 const zoom = ref(0);
 const _rotation = ref(Math.PI / 2);
-
-defineProps({
-  props: ["coords"],
-});
 </script>
 
 <template>
@@ -61,7 +56,6 @@ defineProps({
         </div>
       </ol-overlay>
     </ol-map>
-    <UserInput coords="coords" />
   </main>
 </template>
 
