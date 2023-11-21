@@ -20,8 +20,7 @@ form {
   color: #fafafa;
   background-color: rgba(255, 255, 255, 0.05);
   padding: 1rem;
-  border-radius: 15px;
-  border: 2px solid hsla(160, 100%, 37%, 0.2);
+  border: 2px solid hsla(160, 100%, 37%, 0.4);
 }
 
 input {

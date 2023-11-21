@@ -3,10 +3,14 @@ import HelloWorld from "./components/HelloWorld.vue";
 import { ref } from "vue";
 import UserInput from "./components/UserInput.vue";
 
-const center = ref([7.812653, 51.682774]);
+const coords = ref([7.812653, 51.682774]);
 const projection = ref("EPSG:4326");
 const zoom = ref(0);
-const rotation = ref(Math.PI / 2);
+const _rotation = ref(Math.PI / 2);
+
+defineProps({
+  props: ["coords"],
+});
 </script>
 
 <template>
@@ -34,7 +38,7 @@ const rotation = ref(Math.PI / 2);
       style="height: 400px">
       <ol-view
         ref="view"
-        :center="center"
+        :center="coords"
         :rotation="false"
         :zoom="zoom"
         :projection="projection"
@@ -53,11 +57,11 @@ const rotation = ref(Math.PI / 2);
             padding: 2px;
             border-radius: 5px;
           ">
-          City of Hamm
+          Hamm
         </div>
       </ol-overlay>
     </ol-map>
-    <UserInput />
+    <UserInput coords="coords" />
   </main>
 </template>
 
